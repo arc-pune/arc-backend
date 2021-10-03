@@ -71,7 +71,7 @@ $ npm run dev
 ##Docker Version
 
 ```bash
-$ npm run install && npm dockerize
+$ npm install && npm dockerize
 ```
 
 You can now see the project running on your localhost
