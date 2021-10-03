@@ -9,12 +9,15 @@
     "test": "jest",
     "docker-build": "docker-compose -f docker/docker-compose.yml build",
     "dockerize": "npm run docker-build && npm run docker-start",
-    "docker-start": "docker-compose -f docker/docker-compose.yml  up -d",
+    "docker-start": "docker-compose -f docker/docker-compose.yml  up",
+    "docker-stop": "docker-compose -f docker/docker-compose.yml  stop",
     "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
     "build": "tsc",
     "prestart": "npm run build"
   },
   "dependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/morgan": "^1.9.3",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
@@ -25,6 +28,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^16.10.2",

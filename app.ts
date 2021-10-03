@@ -14,7 +14,9 @@ const config: ConfigurationInterface = {
 }
 
 const app: Application = new Application(config);
-app.serve();
+app.registerMiddleware();
+app.connectMongo();
+// app.serve();
 
 /*
 const mongoose = require("mongoose");
@@ -31,8 +33,9 @@ var morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.use(cookieParser());
 app.options("/volunteer/*", cors());
+
+app.use(cookieParser());
 app.use(cors());
 app.use(morgan(process.env.NODE_ENV == "production" ? "common" : "dev"));
 app.use(express.json());

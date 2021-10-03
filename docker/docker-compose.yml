@@ -9,6 +9,7 @@ services:
       - mongodb
     volumes:
       - '../prod:/app'
+      - '../node_modules:/app/node_modules'
     ports:
       - 4000:4000
     environment:
@@ -19,6 +20,6 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
       - ../db:/data/db:delegated
