@@ -8,9 +8,9 @@ services:
     depends_on:
       - mongodb
     volumes:
-      - '../:/app'
+      - '../prod:/app'
     ports:
-      - 3000:3000
+      - 4000:4000
     environment:
       - CHOKIDAR_USEPOLLING=true
   mongodb:

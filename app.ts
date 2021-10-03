@@ -1,4 +1,22 @@
-require("dotenv").config();
+import {Application} from "./app/application";
+import * as dotenv from 'dotenv';
+
+
+module.exports = {};
+
+dotenv.config({path: __dirname + '/.env'});
+
+const config: ConfigurationInterface = {
+    DB_URL: process.env.MONGO_URI,
+    NODE_ENV: process.env.NODE_ENV,
+    APP_PORT: Number(process.env.PORT) || 4000,
+
+}
+
+const app: Application = new Application(config);
+app.serve();
+
+/*
 const mongoose = require("mongoose");
 
 const express = require("express");
@@ -6,9 +24,6 @@ const app = express();
 
 const DB_URL = process.env.MONGO_URI;
 const PORT = process.env.PORT || 4000;
-/**
- * routes
- */
 
 // middlewares
 var cookieParser = require("cookie-parser");
@@ -22,15 +37,6 @@ app.use(cors());
 app.use(morgan(process.env.NODE_ENV == "production" ? "common" : "dev"));
 app.use(express.json());
 
-app.get("/admin", (req, res) => {
-  console.log("hulla ur on admin page");
-});
-app.get("/", (req, res) => {
-  console.log("app get ");
-  res.send("hello world");
-});
-
-//DB connection
 mongoose
   .connect(DB_URL, {
     dbName: process.env.NODE_ENV === "production" ? "prod" : "staging",
@@ -46,3 +52,5 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+
+*/
