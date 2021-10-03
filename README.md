@@ -5,13 +5,15 @@
 ARC is a non-profit organization which helps orphan pets find their new homes and a family.
 
 ## Contents
-
-- [Clone this repository](#clone-this-repository)
+- [Stack](#stack)
+- [Setup Guide](#setup-guide)
 - [Contribution Guide](#contribution-guide)
-- [Installation Guide](#installation-guide)
+- [Community](#community)
+- [Support](#support)
 - [License](#license)
+- [Maintainers](#primary-maintainers)
 
-# Stack:
+# Stack
 
 | Stack    | Technology         |
 | -------- | ------------------ |
@@ -23,7 +25,18 @@ ARC is a non-profit organization which helps orphan pets find their new homes an
 [![MONGODB](https://img.shields.io/static/v1?label=mongodb&message=4.4.4&color=blueviolet)](https://shields.io/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://shields.io/)
 
-## Clone this repository
+## Setup Guide
+
+Basic requirements
+``` 
+ Install Node version 14 or higher
+ Install MongoDB
+```
+
+- Fork this repository into your own GitHub account.
+- Clone the repo from your GitHub account to your local machine using the following commands
+
+- you can either  use ssh or https
 
 ```bash
 using https:
@@ -37,17 +50,15 @@ $ git clone git@github.com:arc-pune/arc-backend.git
 $ cd arc-backend
 ```
 
-Make sure to create your branch
-
-## Contributing
-
-- Go to `Contributing.md`
-
-## Installation Guide
-
-1. Install Node version 14 or higher
-
-2. Install MongoDB
+- Creating  branch  
+``` bash 
+git branch  your-branch-name
+git checkout your-branch-name
+```
+- Configuring env file
+    - create a .env file in the root directory
+    - set the MongoDb url in the env file 
+    - you can  refer to the .env.example file
 
 To run the development server, do the following in the `arc-backend` directory:
 
@@ -59,6 +70,11 @@ $ npm run dev
 You can now see the project running on your localhost
 
 You can edit files on your text-editor, changes will be reflected in your browser.
+
+## Contribution Guide
+
+- Go to `Contributing.md`
+
 
 ## Community
 
@@ -74,7 +90,7 @@ If you have any feature requests or bug reports, please log them on the [issue t
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Primary maintainers
+## Primary Maintainers
 
 [Anand](https://github.com/AnandDhakane01)
 
