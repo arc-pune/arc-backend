@@ -6,7 +6,10 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node app.js",
     "dev": "nodemon",
-    "test": "jest"
+    "test": "jest",
+    "docker-build": "docker-compose -f docker/docker-compose.yml build",
+    "dockerize": "npm run docker-build && npm run docker-start",
+    "docker-start": "docker-compose -f docker/docker-compose.yml  up -d"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
