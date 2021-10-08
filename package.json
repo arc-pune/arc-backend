@@ -4,7 +4,7 @@
   "private": true,
   "main": "prod/app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node prod/app.js",
+    "start": "cross-env NODE_ENV=prod node prod/app.js",
     "dev": "nodemon",
     "test": "jest",
     "docker-build": "docker-compose -f docker/docker-compose.yml build",

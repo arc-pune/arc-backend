@@ -24,17 +24,15 @@ export class Application {
 
     }
 
-    public connectMongo(): void {
-        mongoose.connect(this.config.DB_URL, {
-            "dbName": (this.config.NODE_ENV === "production" ? "prod" : "staging")
-        })
+    public async connectMongo(): Promise<void> {
+        await mongoose.connect(this.config.DB_URL)
             .then(() => {
                 console.log("✅ Database Connected!");
             });
     }
 
-    public serve(): void {
-        this.app.listen(this.config.APP_PORT, () => {
+    public async serve(): Promise<void> {
+        await this.app.listen(this.config.APP_PORT, () => {
             console.log("🚀 Server Ready! at port:", this.config.APP_PORT);
         });
     }
