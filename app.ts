@@ -10,6 +10,6 @@ const config: ConfigurationInterface = {
 
 const app: Application = new Application(config);
 app.registerMiddleware();
-// app.connectMongo();
+app.connectMongo();
 app.serve();;
 
