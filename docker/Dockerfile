@@ -4,4 +4,5 @@ COPY ../package-lock.json /app
 COPY ../package.json /app
 RUN npm install -g nodemon && npm install
 EXPOSE 4000
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "dev-server"]
+

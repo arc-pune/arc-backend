@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from 'express'
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -7,20 +7,24 @@ import morgan from "morgan";
 
 export class Application {
 
-    private app;
+    private app: express.Application;
+    private router: express.Router;
     private config: ConfigurationInterface;
 
     constructor(config: ConfigurationInterface) {
         this.config = config;
         this.app = express();
+        this.router = express.Router();
     }
 
 
     public registerMiddleware(): void {
-        this.app.use(cookieParser());
-        this.app.use(cors);
-        this.app.use(morgan(this.config.NODE_ENV === "production" ? "common" : "dev"));
-        this.app.use(express.json());
+
+        this.router.get("/admin", (req: Request, res: Response) => {
+            console.log("app get ");
+            res.send("hello world");
+        });
+        this.app.use("/", this.router);
 
     }
 
@@ -31,8 +35,8 @@ export class Application {
             });
     }
 
-    public async serve(): Promise<void> {
-        await this.app.listen(this.config.APP_PORT, () => {
+    public serve(): void {
+         this.app.listen(this.config.APP_PORT, () => {
             console.log("🚀 Server Ready! at port:", this.config.APP_PORT);
         });
     }
