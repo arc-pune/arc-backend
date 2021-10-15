@@ -1,5 +1,6 @@
 import {Application} from "./app/application";
 import * as dotenv from 'dotenv';
+dotenv.config();
 
 const config: ConfigurationInterface = {
     NODE_ENV: process.env.NODE_ENV,
@@ -12,4 +13,3 @@ const app: Application = new Application(config);
 app.registerMiddleware();
 app.connectMongo();
 app.serve();;
-
