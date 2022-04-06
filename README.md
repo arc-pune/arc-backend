@@ -1,10 +1,13 @@
 # ARC(Animal Rescue Community)- BACKEND
 
+# My first contribution
+
 ## Raising Hands For Injured Paws
 
 ARC is a non-profit organization which helps orphan pets find their new homes and a family.
 
 ## Contents
+
 - [Stack](#stack)
 - [Setup Guide](#setup-guide)
 - [Contribution Guide](#contribution-guide)
@@ -28,7 +31,8 @@ ARC is a non-profit organization which helps orphan pets find their new homes an
 ## Setup Guide
 
 Basic requirements
-``` 
+
+```
  Install Node version 14 or higher
  Install MongoDB
 ```
@@ -36,7 +40,7 @@ Basic requirements
 - Fork this repository into your own GitHub account.
 - Clone the repo from your GitHub account to your local machine using the following commands
 
-- you can either  use ssh or https
+- you can either use ssh or https
 
 ```bash
 using https:
@@ -50,19 +54,22 @@ $ git clone git@github.com:arc-pune/arc-backend.git
 $ cd arc-backend
 ```
 
-- Creating  branch  
-``` bash 
+- Creating branch
+
+```bash
 git branch  your-branch-name
 git checkout your-branch-name
 ```
+
 - Configuring env file
-    - create a .env file in the root directory
-    - set the MongoDb url in the env file 
-    - you can  refer to the .env.example file
+  - create a .env file in the root directory
+  - set the MongoDb url in the env file
+  - you can refer to the .env.example file
 
 To run the development server, do the following in the `arc-backend` directory:
 
 ##Non-Docker Version
+
 ```bash
 $ npm install
 $ npm run dev
@@ -81,7 +88,6 @@ You can edit files on your text-editor, changes will be reflected in your browse
 ## Contribution Guide
 
 - Go to `Contributing.md`
-
 
 ## Community
 
