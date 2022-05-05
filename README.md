@@ -21,7 +21,7 @@ ARC is a non-profit organization which helps orphan pets find their new homes an
 | Stack    | Technology         |
 | -------- | ------------------ |
 | Backend  | Nodejs , expressjs |
-| Database | MongoDB            |
+| Database | Postgres           |
 
 [![NPM](https://img.shields.io/static/v1?label=npm&message=7.23&color=blue)](https://shields.io/)
 [![NODE](https://img.shields.io/static/v1?label=node&message=14.17.6&color=success)](https://shields.io/)
