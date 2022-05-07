@@ -3,7 +3,7 @@ import config from "./db/config";
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 var bodyParser = require("body-parser");
-const routes = require("./routes/index");
+const indexRouter = require("./routes/index");
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 
@@ -19,11 +19,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // DB connection
 const AppDataSource = new DataSource(config);
-AppDataSource.initialize()
-  .then(() => {
-    console.log("connected to DB!");
-  })
-  .catch((error) => console.log(error));
+
+(async () => {
+  await AppDataSource.initialize();
+  console.log("connected to DB!");
+})();
+
+app.use("/", indexRouter);
 
 try {
   app.listen(port, async () => {
@@ -32,3 +34,5 @@ try {
 } catch (error: any) {
   console.log(`Error occured: ${error.message}`);
 }
+
+export default AppDataSource;
