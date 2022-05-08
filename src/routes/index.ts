@@ -1,5 +1,7 @@
 const express = require("express");
-// const { register, login } = require("../controllers/auth");
+import { Request, Response } from "express";
+const { register, login } = require("../controllers/auth");
+
 const {
   registerInitialChecks,
   loginInitialChecks,
@@ -7,5 +9,11 @@ const {
 const router = express.Router();
 
 // auth
-// router.post("/register", registerInitialChecks, register);
-// router.post("/login", loginInitialChecks, login);
+router.post("/register", registerInitialChecks, register);
+router.post("/login", loginInitialChecks, login);
+
+router.get("/", (req: Request, res: Response) => {
+  res.send("ARC-PUNE");
+});
+
+module.exports = router;

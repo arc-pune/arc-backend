@@ -4,10 +4,13 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
+  BaseEntity,
 } from "typeorm";
+import { Pets } from "./pet";
 
 @Entity()
-export class Users {
+export class Users extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
@@ -19,6 +22,8 @@ export class Users {
 
   @Column()
   email!: string;
+
+  @OneToMany((type) => Pets, (pet) => pet.owner) pets!: Pets[];
 
   @CreateDateColumn()
   createdAt!: Date;

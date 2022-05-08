@@ -22,9 +22,7 @@ export class Pets {
   @Column()
   breed!: string;
 
-  @Column()
-  @ManyToOne(() => Users)
-  owner!: Users;
+  @ManyToOne((type) => Users, (user) => user.pets) owner!: Users;
 
   @CreateDateColumn()
   createdAt!: Date;
